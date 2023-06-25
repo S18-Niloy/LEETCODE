@@ -1,13 +1,19 @@
 class Solution:
     def isPalindrome(self, x: int) -> bool:
         y = str(x)
+        a = len(y)
         z = len(y)//2
         result = None
-        if y[:z]==y[z+1:]:
-            result = True
+        if a%2==1:
+            if y[:z]==y[z+1:][::-1]:
+                result = True
+            else:
+                result = False
         else:
-            result = False
-
+            if y[:z]==y[z:][::-1]:
+                result = True
+            else:
+                result = False
         return result
 
 s = Solution()
